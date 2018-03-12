@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftBasics'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = 'Swift basic classes to start an APP.'
  
   s.description      = <<-DESC
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/pablojotaguardiola/SwiftBasics.git', :tag => s.version.to_s }
  
   s.ios.deployment_target = '10.0'
-  s.source_files = 'Source/**/*.swift'
+  s.source_files = 'Source/*'
   
   s.dependency 'Alamofire'
   s.dependency 'IQKeyboardManagerSwift'
