@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     
-    func removeSymbols() -> String {
+    public func removeSymbols() -> String {
         let symbolReplacing: [String: String] = [
             ".": "",
             ",": "",
@@ -34,7 +34,7 @@ extension String {
         return text
     }
     
-    func isFirstCapitalized() -> Bool {
+    public func isFirstCapitalized() -> Bool {
         
         guard self.count > 0 else {
             return false

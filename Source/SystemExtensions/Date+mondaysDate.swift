@@ -10,7 +10,7 @@ import Foundation
 
 extension Date {
     
-    static var mondaysDate: Date {
+    public static var mondaysDate: Date {
         return Calendar(identifier: .iso8601).date(from: Calendar(identifier: .iso8601).dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
     }
     

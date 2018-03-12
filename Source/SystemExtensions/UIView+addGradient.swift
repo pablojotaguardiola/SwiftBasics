@@ -16,7 +16,7 @@ public enum GradientDirection {
 
 extension UIView {
     
-    func addGradientLayer(with color: UIColor = UIColor.white, factor: Double = 1, directon: GradientDirection = .bottom, frame: CGRect? = nil){
+    public func addGradientLayer(with color: UIColor = UIColor.white, factor: Double = 1, directon: GradientDirection = .bottom, frame: CGRect? = nil){
         if let sublayers = self.layer.sublayers {
             for sublayer in sublayers {
                 sublayer.removeFromSuperlayer()
@@ -38,7 +38,7 @@ extension UIView {
         self.layer.addSublayer(gradient)
     }
     
-    func removeSublayers() {
+    public func removeSublayers() {
         if let sublayers = self.layer.sublayers {
             for sublayer in sublayers {
                 sublayer.removeFromSuperlayer()

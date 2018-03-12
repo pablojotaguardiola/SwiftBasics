@@ -11,7 +11,7 @@ import UIKit
 
 extension CALayer {
     
-    func setMenuItemShadow(bounds: CGRect) {
+    public func setMenuItemShadow(bounds: CGRect) {
         
         self.cornerRadius = 20
         
@@ -25,7 +25,7 @@ extension CALayer {
         
     }
     
-    func setShadow(bounds: CGRect, radius: CGFloat? = nil) {
+    public func setShadow(bounds: CGRect, radius: CGFloat? = nil) {
         
         self.shadowColor = UIColor.gray.withAlphaComponent(0.95).cgColor
         self.shadowOpacity = 0.9

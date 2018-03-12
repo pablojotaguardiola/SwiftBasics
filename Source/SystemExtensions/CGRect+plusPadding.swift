@@ -11,7 +11,7 @@ import UIKit
 
 extension CGRect {
     
-    func plus(padding: CGFloat) -> CGRect {
+    public func plus(padding: CGFloat) -> CGRect {
         
         return CGRect(
             x: self.origin.x - padding,

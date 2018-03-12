@@ -11,7 +11,7 @@ import UIKit
 
 extension UIBarButtonItem {
     
-    func getView() -> UIView? {
+    public func getView() -> UIView? {
         return self.value(forKey: "view") as? UIView
     }
 }

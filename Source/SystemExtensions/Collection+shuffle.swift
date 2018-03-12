@@ -11,7 +11,7 @@ import UIKit
 
 extension MutableCollection {
     /// Shuffles the contents of this collection.
-    mutating func shuffle() {
+    public mutating func shuffle() {
         let c = count
         guard c > 1 else { return }
         
@@ -25,7 +25,7 @@ extension MutableCollection {
 
 extension Sequence {
     /// Returns an array with the contents of this sequence, shuffled.
-    func shuffled() -> [Element] {
+    public func shuffled() -> [Element] {
         var result = Array(self)
         result.shuffle()
         return result
@@ -33,7 +33,7 @@ extension Sequence {
 }
 
 extension UICollectionView {
-    func reloadData(completion: @escaping ()->()) {
+    public func reloadData(completion: @escaping ()->()) {
         UIView.animate(withDuration: 0, animations: { self.reloadData() })
         { _ in completion() }
     }

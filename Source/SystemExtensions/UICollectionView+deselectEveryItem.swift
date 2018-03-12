@@ -11,7 +11,7 @@ import UIKit
 
 extension UICollectionView {
     
-    func deselectEveryItem() {
+    public func deselectEveryItem() {
         for indexPath in self.indexPathsForSelectedItems ?? [] {
             self.deselectItem(at: indexPath, animated: true)
             self.cellForItem(at: indexPath)?.isSelected = false
