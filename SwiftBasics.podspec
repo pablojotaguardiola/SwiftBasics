@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftBasics'
-  s.version          = '0.0.8'
+  s.version          = '0.0.9'
   s.summary          = 'Swift basic classes to start an APP.'
  
   s.description      = <<-DESC
@@ -18,5 +18,6 @@ Pod::Spec.new do |s|
   s.dependency 'Alamofire'
   s.dependency 'IQKeyboardManagerSwift'
   s.dependency 'ReactiveSwift'
+  s.dependency 'DeviceKit', '~> 1.3.0'
  
 end
