@@ -24,3 +24,4 @@ Basic swift classes and pod dependencies to start an APP
 - Alamofire: https://github.com/Alamofire/Alamofire/blob/master/README.md
 - IQKeyboardManager: https://github.com/hackiftekhar/IQKeyboardManager
 - ReactiveSwift: https://github.com/ReactiveCocoa/ReactiveSwift
+- DeviceKit: https://github.com/dennisweissmann/DeviceKit
