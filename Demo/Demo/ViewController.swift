@@ -7,19 +7,51 @@
 //
 
 import UIKit
+import SwiftBasics
 
 class ViewController: UIViewController {
-
+        
+    let postUrl = "http://monohgamub.cluster011.ovh.net/englishApp/index.php/en/app_controller/getGMTTimeInterval"
+    let getUrl = "https://jsonplaceholder.typicode.com/photos"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        NetworkApi(url: postUrl).post(
+            parameters: nil
+        ) { result, error in
+            
+            guard
+                error == nil,
+                let result = result
+            else {
+                print(error ?? "")
+                return
+            }
+            
+            print(result)
+        }
+        
+        NetworkApi(url: getUrl).get(
+            parameters: nil
+        ) { result, error in
+            
+            guard
+                error == nil,
+                let result = result
+            else {
+                print(error ?? "")
+                return
+            }
+            
+            print(result)
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 

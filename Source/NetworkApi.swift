@@ -13,9 +13,9 @@ import Alamofire
  Class to make POST requests against server getting a JSON response.
  
  Parameters:
-    - baseUrl: base url of server
-    - operation: endpoint to add at the end of base url
-    - parameters: parameters to send in the post request
+ - baseUrl: base url of server
+ - operation: endpoint to add at the end of base url
+ - parameters: parameters to send in the post request
  */
 
 public final class NetworkApi: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate {
@@ -24,16 +24,18 @@ public final class NetworkApi: NSObject, URLSessionDelegate, URLSessionTaskDeleg
         case unknown = "Unknown error"
     }
     
-    let baseURL: String = "http://monohgamub.cluster011.ovh.net/englishApp/index.php/en/app_controller/"
+    fileprivate let url: String
     
     private var request: DataRequest?
     
+    public init(url: String) {
+        self.url = url
+    }
+    
     //MARK: - POST
-    public func post(operation: NetworkApi.Operation, parameters: [String: AnyObject]?, completion: @escaping ([String: AnyObject]?, _ error: NetworkApiError?) -> ()) {
+    public func post(parameters: [String: AnyObject]?, completion: @escaping ([String: AnyObject]?, _ error: NetworkApiError?) -> ()) {
         
         request?.cancel()
-        
-        let url = baseURL + operation.rawValue
         
         request = Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
             
@@ -50,11 +52,26 @@ public final class NetworkApi: NSObject, URLSessionDelegate, URLSessionTaskDeleg
         }
     }
     
+    public func get(parameters: [String: AnyObject]?, completion: @escaping (String?, _ error: NetworkApiError?) -> ()) {
+        
+        request?.cancel()
+        
+        request = Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseString { response in
+            
+            if
+                response.result.isSuccess,
+                let resultString = response.value
+            {
+                completion(resultString, nil)
+            } else {
+                completion(nil, .unknown)
+            }
+        }
+    }
+    
     public func cancel() {
         request?.cancel()
     }
-    
-    public enum Operation: String {
-        case sample = "getGMTTimeInterval"
-    }
 }
+
+

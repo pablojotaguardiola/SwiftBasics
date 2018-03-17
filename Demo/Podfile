@@ -6,6 +6,7 @@ target 'Demo' do
   use_frameworks!
 
   # Pods for Demo
+    pod 'SwiftBasics', :path => '../'
 
   target 'DemoTests' do
     inherit! :search_paths

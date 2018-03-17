@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftBasics'
-  s.version          = '0.0.9'
+  s.version          = '0.1.0'
   s.summary          = 'Swift basic classes to start an APP.'
  
   s.description      = <<-DESC
